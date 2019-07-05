@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>I earned it.</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<!-- TODO! Handle what happens when user is in the red, i.e. did not meet savings goals! -->
+<body>
+  <div class="navbar">
+    <nav class="teal lighten-2" role="navigation">
+      <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">i<b class="lime-text text-accent-1">earned</b>it</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">Personal Finance Literacy</a></li>
+          <li><a href="#">Log In</a></li>
+          <li><a class="btn lime accent-1 black-text" href="#getStarted">Sign Up</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav">
+          <li><a href="#">Navbar Link</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </div>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <div class="center">
+        <h1 class="header teal-text text-lighten-3">Save money. Treat yourself.</h1>
+        <h5 class="header col s12 light">
+          Personal finance is tough. Track your spending, and treat yourself when you meet your savings goals.</h5>
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="icon-block">
+              <h2 class="center teal-text text-lighten-3">
+                <i class="material-icons">
+                  attach_money
+                </i>
+              </h2>
+              <h5 class="center teal-text text-darken-2">Take Control of your Spending</h5>
+              <p class="light">
+                Each payday, record and compare how much you've spent against how much you've earned.
+                If you've met your goals for the pay period, feel free to treat yourself!
+              </p>
+            </div>
+          </div>        
+          <div class="col s12 m6">
+            <div class="icon-block">
+              <h2 class="center teal-text text-lighten-3">
+                <i class="material-icons">
+                    lightbulb_outline
+                </i>
+              </h2>
+              <h5 class="center teal-text text-darken-2">Learn Personal Finance 101</h5>
+              <p class="light">
+                Alternatively, you can check out our <a href="#">notes</a> on personal finance literacy. Personal finance literacy
+                is extremely important but rarely taught. Educate yourself today!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="">
+            <a href="#getStarted" class="btn-large waves-effect waves-light lime accent-1 black-text">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="container center">
+    <br>
+    <hr>
+    <br>
+    <h4 class="light grey-text">A Better Way to Track your Spending Habits</h4>
+    <div class="row">
+      <div class="col s12">
+        <p class="light">
+          I tried apps that are supposed to help you track your spending. They require sensitive bank account details,
+          mislabel your purchases, or are just too complicated. i<b class="teal-text text-accent-6">earned</b>.it allows you to review your purchases and manually
+          enter your spend data so that you have a clear understanding of your budget. If you beat your savings goals, 
+          we'll prompt you to treat yourself or donate a bit to charity. Don't worry though; you'll never being prompted
+          to undermine your goals. Or, simply rake in the dough and watch your savings climb higher than you even planned!
+          <br><br>
+          Additionally, we will maintain a repository of <a href="#">personal finance literacy</a>. These topics are
+          rarely, if ever, discussed in formal education, but they are critical to accumulating and maintaining
+          livable wealth. If you miss your goals, we'll recommend you check out a new resource to help you right
+          the ship.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <br>
+    <hr>
+    <br>
+    <h4 id="getStarted" class="light grey-text">Get Started</h4>
+    <p class="light">
+      Whether your a new or existing customer, fill out the details below for your latest pay period. Review
+      your bank or credit card statement, and fill in a row for each purchase. If you've met your goals, 
+      we'll let you know! If you haven't, we'll offer some words of encouragement and give you some tips.
+    </p>
+    <form>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="income" type="number" class="validate">
+          <label>Amount Earned Last Paycheck</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="savings" type="number" class="validate">
+          <label>Savings per Pay Period Goal</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input disabled value="Surplus" id="surplus" type="text" class="hide black-text validate">
+        </div>
+      </div>
+      <br>
+
+      <table id="entryTable">
+        <thead>
+          <th>Item</th>
+          <th>Category</th>
+          <th>Price</th>
+        </thead>
+        <tbody>
+          <tr class="cell">
+            <td><input placeholder="Enter Item" type="text" class="cell"></td>
+            <td><input placeholder="Enter Category" type="text" class="cell"></td>
+            <td><input placeholder="Enter Price" type="number" class="cell price"></td>
+            <td>&emsp;<a onclick="addRow(event)" class="btn-floating btn-large waves-effect waves-light teal-text"><i class="material-icons">add</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="center">
+        <button class="btn-large waves-effect waves-light lime accent-1 black-text" type="submit" name="action">Submit
+          <i class="material-icons right">launch</i>
+        </button>
+      </div>
+    </form>
+    </div>
+
+    <br><br>
+
+  <!-- Footer -->
+  <footer class="page-footer teal lighten-2">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Donate</h5>
+          <p class="grey-text text-lighten-4">
+            Please consider donating to iearned.it. Donations will go either directly back
+            into the site or to an education-focused charity.
+          </p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Resources</h5>
+          <ul>
+            <li><a class="lime-text text-accent-1" href="#!">Personal Finance Literacy</a></li>
+            <li><a class="lime-text text-accent-1" href="https://www.reddit.com/r/personalfinance/wiki/commontopics" target="_blank" rel="noopener noreferrer">
+              Reddit Personal Finance Guide
+            </a></li>
+            <li><a class="lime-text text-accent-1" href="https://www.reddit.com/r/personalfinance/wiki/index" target="_blank" rel="noopener noreferrer">
+              Reddit Personal Finance Wiki
+            </a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul class="footer-link">
+            <li><a class="lime-text text-accent-1" href="#!"><i class="material-icons">email</i></a></li>
+            <li><a class="lime-text text-accent-1" href="#!">GitHub</a></li> <!--Github icon-->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Inspired by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+   <script>
+     function addRow(e) {
+      console.log(e)
+      // e.srcElement.innerHTML = 'delete'
+      $('<tr class="cell">\
+          <td><input placeholder="Enter Item" type="text" class="cell"></td>\
+          <td><input placeholder="Enter Category" type="text" class="cell"></td>\
+          <td><input placeholder="Enter Price" type="number" class="cell price"></td>\
+          <td>&emsp;<a onclick="addRow(event)" class="btn-floating btn-large waves-effect waves-light teal-text"><i class="material-icons">add</i></a></td>\
+        </tr>').appendTo($("#entryTable"))
+      var parent = e.srcElement.parentNode
+      parent.outerHTML = '<a onclick="deleteRow(event)" class="btn-floating btn-large waves-effect waves-light teal-text"><i class="material-icons">delete</i></a>'
+      income = parseFloat($('#income').val())
+      goal = parseFloat($('#savings').val())
+      total = getTotal()
+      surplus = income - total - goal
+      toast_html = "Extra spending money: " + surplus
+      $('#surplus').val(toast_html);
+      $("#surplus").removeClass('hide');
+      M.toast({html: toast_html});
+      return false;
+     }
+
+     function deleteRow(e) {
+       // TODO: If only one row left, need to hide surplus form element
+       var rowIndex = e.srcElement.parentNode.parentNode.parentNode.rowIndex
+       document.getElementById('entryTable').deleteRow(rowIndex);
+       var count = $('#entryTable tr').length;
+       console.log(count)
+       // Why is count 2?
+       if (count == 2) {
+        $("#surplus").addClass('hide');
+       }
+     }
+
+     function getTotal() {
+       total = 0
+       $('#entryTable .price').each(function() {
+        var val = parseFloat($(this).val());
+        console.log(val)
+        if ($.isNumeric(val)) {
+          total += val
+       }
+      });
+      return total;
+     }
+   </script>
+  </body>
+</html>
