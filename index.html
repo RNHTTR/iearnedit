@@ -1,3 +1,7 @@
+<!-- TODO
+  Handle empty values for category, item name
+  Category is gray even after selection
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,21 +112,21 @@
     <form>
       <div class="row">
         <div class="input-field col s6">
-          <input id="email" type="email" class="validate">
+          <input id="email" type="email" class="validate" required>
           <label for="email">Email</label>
         </div>
         <div class="input-field col s6">
-          <input id="password" type="password" class="validate">
+          <input id="password" type="password" class="validate" required>
           <label for="password">Password</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input id="income" type="number" class="validate">
+          <input id="income" type="number" class="validate" required>
           <label>Amount Earned Last Paycheck</label>
         </div>
         <div class="input-field col s6">
-          <input id="savings" type="number" class="validate">
+          <input id="savings" type="number" class="validate" required>
           <label>Savings per Pay Period Goal</label>
         </div>
       </div>
@@ -141,9 +145,21 @@
         </thead>
         <tbody>
           <tr class="cell">
-            <td><input placeholder="Enter Item" type="text" class="cell"></td>
-            <td><input placeholder="Enter Category" type="text" class="cell"></td>
-            <td><input placeholder="Enter Price" type="number" class="cell price"></td>
+            <td><input placeholder="Enter Item" type="text" class="cell" required></td>
+            <td>
+              <select class="cell validate" required>
+                <!-- TODO: Include a button for a modal for each option to describe what falls under the category -->
+                  <option value="" disabled selected>Choose Category</option>
+                  <option value="home">Home</option>
+                  <option value="transportation">Transportation</option>
+                  <option value="essentials">Essentials</option>
+                  <option value="insurance">Insurance</option>
+                  <option value="personal">Personal Spending</option>
+                  <option value="miscellaneous">Miscellaneous</option>
+                  <option value="frivolous">Frivolous</option>
+              </select>
+            </td>
+            <td><input placeholder="Enter Price" type="number" class="cell price" required></td>
             <td>&emsp;<a onclick="addRow(event)" class="btn-floating btn-large waves-effect waves-light teal-text"><i class="material-icons">add</i></a></td>
           </tr>
         </tbody>
@@ -203,42 +219,115 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
    <script>
+     $(document).ready(function(){
+      $('select').formSelect();
+     });
+
      function addRow(e) {
-      console.log(e)
-      // e.srcElement.innerHTML = 'delete'
-      $('<tr class="cell">\
-          <td><input placeholder="Enter Item" type="text" class="cell"></td>\
-          <td><input placeholder="Enter Category" type="text" class="cell"></td>\
-          <td><input placeholder="Enter Price" type="number" class="cell price"></td>\
-          <td>&emsp;<a onclick="addRow(event)" class="btn-floating btn-large waves-effect waves-light teal-text"><i class="material-icons">add</i></a></td>\
-        </tr>').appendTo($("#entryTable"))
-      var parent = e.srcElement.parentNode
-      parent.outerHTML = '<a onclick="deleteRow(event)" class="btn-floating btn-large waves-effect waves-light teal-text"><i class="material-icons">delete</i></a>'
-      income = parseFloat($('#income').val())
-      goal = parseFloat($('#savings').val())
-      total = getTotal()
-      surplus = income - total - goal
-      toast_html = "Extra spending money: " + surplus
-      $('#surplus').val(toast_html);
-      $("#surplus").removeClass('hide');
-      M.toast({html: toast_html});
-      return false;
+       console.log(e)
+       // e.srcElement.innerHTML = 'delete'
+       var values = getValues()
+       var income = values.income
+       var goal = values.goal
+       var total = values.total
+       var surplus = values.surplus
+       var toasts = []
+       var toastClasses = ""
+       if (total > 0 && income > 0 && goal > 0 && income > goal) {
+         $('<tr class="cell">\
+            <td><input placeholder="Enter Item" type="text" class="cell"></td>\
+             <select class="cell">\
+               <!-- TODO: Include a button for a modal for each option to describe what falls under the category -->\
+                 <option value="" disabled selected>Choose Category</option>\
+                 <option value="home">Home</option>\
+                 <option value="transportation">Transportation</option>\
+                 <option value="essentials">Essentials</option>\
+                 <option value="insurance">Insurance</option>\
+                 <option value="personal">Personal Spending</option>\
+                 <option value="miscellaneous">Miscellaneous</option>\
+                 <option value="frivolous">Frivolous</option>\
+             </select>\
+             <td><input placeholder="Enter Category" type="text" class="cell"></td>\
+             <td><input placeholder="Enter Price" type="number" class="cell price"></td>\
+             <td>&emsp;<a onclick="addRow(event)" class="btn-floating btn-large waves-effect waves-light teal-text"><i class="material-icons">add</i></a></td>\
+          </tr>').appendTo($("#entryTable"))
+         var parent = e.srcElement.parentNode
+         parent.outerHTML = '<a onclick="deleteRow(event)" class="btn-floating btn-large waves-effect waves-light teal-text"><i class="material-icons">delete</i></a>'
+          
+         if (surplus < 0) {
+           toastClasses += "red"
+         }
+         var toastHtml = getToastHtml(surplus)
+         $('#surplus').val(toastHtml);
+         $("#surplus").removeClass('hide');
+         toasts.push(toastHtml)
+       } else {  
+         if (total === 0) {
+           toasts.push("Please enter a price for your item ")
+         }
+         if (income === 0 || isNaN(income)) {
+           toasts.push("Please enter your income for the pay period")
+         }
+         if (goal === 0 || isNaN(goal)) {
+           toasts.push("C'mon, you can save more than $0!")
+         }
+       }
+       for (i = 0; i < toasts.length; i++) {
+         M.toast({html: toasts[i], classes: toastClasses});
+       }
+     }
+
+     function getValues() {
+      var income = parseFloat($('#income').val())
+      var goal = parseFloat($('#savings').val())
+      var total = getTotal()
+      var surplus = income - total - goal
+      return {
+        income: income,
+        goal: goal,
+        total: total,
+        surplus: surplus
+      }
+     }
+
+     function getToastHtml(surplus) {
+       if (surplus > 0) {
+        var toastHtml = "Extra spending money: $" + surplus
+       } else if (surplus === 0) {
+        var toastHtml = "Careful! You're right at your limit."
+       } else {
+        var toastHtml = "Uh-oh! You are under your savings goal by $" + (-surplus) + ". Keep trying!"
+       }
+       return toastHtml
      }
 
      function deleteRow(e) {
-       // TODO: If only one row left, need to hide surplus form element
        var rowIndex = e.srcElement.parentNode.parentNode.parentNode.rowIndex
        document.getElementById('entryTable').deleteRow(rowIndex);
        var count = $('#entryTable tr').length;
-       console.log(count)
+       var values = getValues()
+       var income = values.income
+       var goal = values.goal
+       var total = values.total
+       var surplus = values.surplus
+       var toastClasses = ""
+       if (surplus < 0) {
+         toastClasses += "red"
+       }
+       var toastHtml = getToastHtml(surplus)
+       M.toast({html: toastHtml, classes: toastClasses});
+       $('#surplus').val(toastHtml);
+       
+       // If only one row left, need to hide surplus form element
        // Why is count 2?
        if (count == 2) {
+        $('#surplus').val("");
         $("#surplus").addClass('hide');
        }
      }
 
      function getTotal() {
-       total = 0
+       var total = 0
        $('#entryTable .price').each(function() {
         var val = parseFloat($(this).val());
         console.log(val)

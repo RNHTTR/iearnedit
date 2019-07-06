@@ -14,16 +14,20 @@
 }
 
 .cell {
-  outline: 0 !important;
   border: 0 !important;
-  border-bottom: 0 !important;
 }
 
-tr .cell {
+.cell .select-wrapper input.select-dropdown {
+  border: 0 !important;
+  /* border-bottom: 0 !important; */
+  color: rgba(0, 0, 0, 0.18);
+}
+
+/* tr .cell {
   outline: 0 !important;
   border: 0 !important;
   border-bottom: 0 !important;
-}
+} */
 
 hr {
   border-color: #009688;
