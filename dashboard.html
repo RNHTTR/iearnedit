@@ -1,7 +1,5 @@
 <!-- TODO
-  Handle empty values for category, item name
-  Category is gray even after selection
-  Submit button should be greyed out until an item is added
+  Side Nav
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +16,7 @@
 <!-- TODO! Handle what happens when user is in the red, i.e. did not meet savings goals! -->
 <body>
   <div class="navbar">
-    <nav class="teal lighten-2" role="navigation">
+    <nav class="red lighten-2" role="navigation">
       <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">i<b class="lime-text text-accent-1">earned</b>it</a>
         <ul class="right hide-on-med-and-down">
           <li><a href="#">Personal Finance Literacy</a></li>
@@ -33,101 +31,174 @@
       </div>
     </nav>
   </div>
-  <div class="section no-pad-bot" id="index-banner">
+
+  <div class="section no-pad-bot">
+    <br>
+    <!-- <br> -->
     <div class="container">
-      <br><br>
-      <div class="center">
-        <h1 class="header teal-text text-lighten-3">Save money. Treat yourself.</h1>
-        <h5 class="header col s12 light">
-          Personal finance is tough. Track your spending, and treat yourself when you meet your savings goals.</h5>
-        <div class="row">
-          <div class="col s12 m6">
-            <div class="icon-block">
-              <h2 class="center teal-text text-lighten-3">
-                <i class="material-icons">
-                  attach_money
-                </i>
-              </h2>
-              <h5 class="center teal-text text-darken-2">Take Control of your Spending</h5>
-              <p class="light">
-                Each payday, record and compare how much you've spent against how much you've earned.
-                If you've met your goals for the pay period, feel free to treat yourself!
-              </p>
+      <h1 class="header teal-text text-lighten-3">Dashboard</h1>
+      <!-- <br> -->
+      <h4 class="light grey-text">2020</h4>
+      <h6 class="light grey-text">February</h6>
+      <ul class="collapsible">
+        <li>
+          <div class="collapsible-header">Pay Period 2</div>
+          <div class="collapsible-body">
+            <h6>
+              **Surplus/Deficit Details Here**
+            </h6>
+            <table>
+                <thead>
+                  <th>Item</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                </thead>
+                <tbody>
+                  <tr class="cell">
+                    <td class="text-darken-1 grey-text">Coffee</td>
+                    <td class="text-darken-1 grey-text">Frivolous</td>
+                    <td class="text-darken-1 grey-text">5.50</td>
+                  </tr>
+                  <tr class="cell">
+                    <td class="text-darken-1 grey-text">Groceries</td>
+                    <td class="text-darken-1 grey-text">Groceries</td>
+                    <td class="text-darken-1 grey-text">120</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </div>        
-          <div class="col s12 m6">
-            <div class="icon-block">
-              <h2 class="center teal-text text-lighten-3">
-                <i class="material-icons">
-                    lightbulb_outline
-                </i>
-              </h2>
-              <h5 class="center teal-text text-darken-2">Learn Personal Finance 101</h5>
-              <p class="light">
-                Alternatively, you can check out our <a href="#">notes</a> on personal finance literacy. Personal finance literacy
-                is extremely important but rarely taught. Educate yourself today!
-              </p>
+          </li>
+          <li>
+            <div class="collapsible-header">Pay Period 1</div>
+            <div class="collapsible-body">
+              <table>
+                  <thead>
+                    <th>Item</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                  </thead>
+                  <tbody>
+                    <tr class="cell">
+                      <td class="text-darken-1 grey-text">Coffee</td>
+                      <td class="text-darken-1 grey-text">Frivolous</td>
+                      <td class="text-darken-1 grey-text">5.50</td>
+                    </tr>
+                    <tr class="cell">
+                      <td class="text-darken-1 grey-text">Groceries</td>
+                      <td class="text-darken-1 grey-text">Groceries</td>
+                      <td class="text-darken-1 grey-text">120</td>
+                    </tr>
+                  </tbody>
+                </table>
             </div>
+          </li>
+        </ul>
+        <br>
+          
+        <h6 class="light grey-text">January</h6>
+        <ul class="collapsible">
+        <li>
+          <div class="collapsible-header">Pay Period 3</div>
+          <div class="collapsible-body">
+            <table>
+                <thead>
+                  <th>Item</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                </thead>
+                <tbody>
+                  <tr class="cell">
+                    <td class="text-darken-1 grey-text">Coffee</td>
+                    <td class="text-darken-1 grey-text">Frivolous</td>
+                    <td class="text-darken-1 grey-text">5.50</td>
+                  </tr>
+                  <tr class="cell">
+                    <td class="text-darken-1 grey-text">Groceries</td>
+                    <td class="text-darken-1 grey-text">Groceries</td>
+                    <td class="text-darken-1 grey-text">120</td>
+                  </tr>
+                </tbody>
+              </table>
           </div>
-        </div>
-        <div class="">
-            <a href="#getStarted" class="btn-large waves-effect waves-light lime accent-1 black-text">Get Started</a>
-        </div>
-      </div>
+        </li>
+        <li>
+          <div class="collapsible-header">Pay Period 2</div>
+          <div class="collapsible-body">
+            <table>
+                <thead>
+                  <th>Item</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                </thead>
+                <tbody>
+                  <tr class="cell">
+                    <td class="text-darken-1 grey-text">Coffee</td>
+                    <td class="text-darken-1 grey-text">Frivolous</td>
+                    <td class="text-darken-1 grey-text">5.50</td>
+                  </tr>
+                  <tr class="cell">
+                    <td class="text-darken-1 grey-text">Groceries</td>
+                    <td class="text-darken-1 grey-text">Groceries</td>
+                    <td class="text-darken-1 grey-text">120</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header">Pay Period 1</div>
+          <div class="collapsible-body">
+            <table>
+              <thead>
+                <th>Item</th>
+                <th>Category</th>
+                <th>Price</th>
+              </thead>
+              <tbody>
+                <tr class="cell">
+                  <td class="text-darken-1 grey-text">Coffee</td>
+                  <td class="text-darken-1 grey-text">Frivolous</td>
+                  <td class="text-darken-1 grey-text">5.50</td>
+                </tr>
+                <tr class="cell">
+                  <td class="text-darken-1 grey-text">Groceries</td>
+                  <td class="text-darken-1 grey-text">Groceries</td>
+                  <td class="text-darken-1 grey-text">120</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+      </ul>
+      <br>
+      <h4 class="light grey-text">2019</h4>
+      <h6 class="light grey-text">December</h6>
+      <ul class="collapsible">
+        <li>
+          <div class="collapsible-header">Pay Period 2</div>
+          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+        <li>
+          <div class="collapsible-header">Pay Period 1</div>
+          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+      </ul>
     </div>
   </div>
-  <br><br>
+  <!-- <br> -->
 
-  <div class="container center">
-    <br>
-    <hr>
-    <br>
-    <h4 class="light grey-text">A Better Way to Track your Spending Habits</h4>
-    <div class="row">
-      <div class="col s12">
-        <p class="light">
-          I tried apps that are supposed to help you track your spending. They require sensitive bank account details,
-          mislabel your purchases, or are just too complicated. i<b class="teal-text text-accent-6">earned</b>.it allows you to review your purchases and manually
-          enter your spend data so that you have a clear understanding of your budget. If you beat your savings goals, 
-          we'll prompt you to treat yourself or donate a bit to charity. Don't worry though; you'll never being prompted
-          to undermine your goals. Or, simply rake in the dough and watch your savings climb higher than you even planned!
-          <br><br>
-          Additionally, we will maintain a repository of <a href="#">personal finance literacy</a>. These topics are
-          rarely, if ever, discussed in formal education, but they are critical to accumulating and maintaining
-          livable wealth. If you miss your goals, we'll recommend you check out a new resource to help you right
-          the ship.
-        </p>
-      </div>
-    </div>
-  </div>
-
+  <!-- New Entry -->
   <div class="container">
     <br>
     <hr>
     <br>
-    <h4 id="getStarted" class="light grey-text">Get Started</h4>
-    <p class="light">
-      Whether you're a new or existing customer, fill out the details below for your latest pay period. Review
-      your bank or credit card statement, and fill in a row for each purchase. If you've met your goals, 
-      we'll let you know! If you haven't, we'll offer some words of encouragement and give you some tips.
-    </p>
-    <form target="_blank" method="POST" action="dashboard.html" action="javascript:;" onsubmit="sendToDashboard()">
-    <!-- <form> -->
-    <!-- <form id="formEntry" action="javascript:;" onsubmit="sendToDashboard(this)"> -->
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="email" type="email" class="validate" name="email" required>
-          <label for="email">Email</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="password" type="password" class="validate" name="password" required>
-          <label for="password">Password</label>
-        </div>
-      </div>
+    <h4 class="light grey-text">New Entry</h4>
+    
+    <form>
       <div class="row">
         <div class="input-field col s4">
           <input id="income" type="number" class="validate" required>
-          <label>Amount Earned Last Paycheck</label>
+          <label>Amount Earned</label>
         </div>
         <div class="input-field col s4">
           <input id="savings" type="number" class="validate" required>
@@ -135,7 +206,7 @@
         </div>
         <div class="input-field col s4">
           <input id="date" type="text" class="datepicker validate" required>
-          <label>Savings per Pay Period Goal</label>
+          <label>Pay Date</label>
         </div>
       </div>
       <div class="row">
@@ -143,6 +214,7 @@
           <input disabled value="Surplus" id="surplus" type="text" class="hide black-text validate">
         </div>
       </div>
+      <!-- <br> -->
 
       <table id="entryTable">
         <thead>
@@ -160,7 +232,7 @@
                   <option value="home">Home</option>
                   <option value="transportation">Transportation</option>
                   <option value="essentials">Essentials</option>
-                  <option value="insurance">Insurance</option>
+                  <option value="Frivolous">Frivolous</option>
                   <option value="personal">Personal Spending</option>
                   <option value="miscellaneous">Miscellaneous</option>
                   <option value="frivolous">Frivolous</option>
@@ -229,6 +301,7 @@
      $(document).ready(function(){
       $('select').formSelect();
       $('.datepicker').datepicker();
+      $('.collapsible').collapsible();
      });
 
      function addRow(e) {
@@ -250,7 +323,7 @@
                  <option value="home">Home</option>\
                  <option value="transportation">Transportation</option>\
                  <option value="essentials">Essentials</option>\
-                 <option value="insurance">Insurance</option>\
+                 <option value="Frivolous">Frivolous</option>\
                  <option value="personal">Personal Spending</option>\
                  <option value="miscellaneous">Miscellaneous</option>\
                  <option value="frivolous">Frivolous</option>\
@@ -346,24 +419,11 @@
       return total;
      }
 
-     function sendToDashboard(event) {
-       // TODO: Invoke Lambda here
-       console.log('hi!')
-       // var serializedForm = $('form').serialize()
-       // console.log(serializedForm)
-       const params = new URLSearchParams(window.location.search);
-       // const params = new Map(location.search.slice(1).split('&').map(kv => kv.split('=')))
-       console.log(params.get('email'))
-       console.log(params.get('password'))
-     }
-
-    // document.querySelector('form').addEventListener('submit', function(e) {
-    //   console.log('hi!')
-    //   const params = new Map(location.search.slice(1).split('&').map(kv => kv.split('=')))
-    //   // TODO: Pass params to DynamoDB
-    //   console.log(params.get('email'))
-    // });
-    
+    document.querySelector('form').addEventListener('submit', function(e) {
+      const params = new Map(location.search.slice(1).split('&').map(kv => kv.split('=')))
+      // TODO: Pass params to DynamoDB
+      console.log(params.get('email'))
+    });
    </script>
   </body>
 </html>
