@@ -32,3 +32,28 @@
 hr {
   border-color: #009688;
 }
+
+.nested-collapsible {
+  /* border-left: 0 !important;
+  border-right: 0 !important; */
+  /* border: 0 !important; */
+  
+  display: block;
+  /* margin-bottom: 0; */
+  /* display: none; */
+}
+
+.nested-collapsible-shadow {
+  box-shadow: none;
+  border: 0 !important;
+  -webkit-box-shadow: 0 !important;
+  /* border-bottom: 0 !important; */
+}
+
+.collapsible-body .nested-collapsible-border-none {
+  border-bottom: 0 !important;
+}
+
+.chevron {
+  vertical-align: middle;
+}

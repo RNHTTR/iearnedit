@@ -13,10 +13,9 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<!-- TODO! Handle what happens when user is in the red, i.e. did not meet savings goals! -->
 <body>
   <div class="navbar">
-    <nav class="red lighten-2" role="navigation">
+    <nav class="teal lighten-2" role="navigation">
       <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">i<b class="lime-text text-accent-1">earned</b>it</a>
         <ul class="right hide-on-med-and-down">
           <li><a href="#">Personal Finance Literacy</a></li>
@@ -32,167 +31,255 @@
     </nav>
   </div>
 
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large red lighten-1">
+      <i class="large material-icons">menu</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating yellow darken-2"><i class="material-icons">insert_chart</i></a></li>
+      <!-- <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li> -->
+      <li><a href="#newEntry" class="btn-floating teal lighten-2"><i class="material-icons">add</i></a></li>
+      <!-- <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li> -->
+    </ul>
+  </div>
+
   <div class="section no-pad-bot">
     <br>
-    <!-- <br> -->
     <div class="container">
-      <h1 class="header teal-text text-lighten-3">Dashboard</h1>
-      <!-- <br> -->
-      <h4 class="light grey-text">2020</h4>
-      <h6 class="light grey-text">February</h6>
-      <ul class="collapsible">
-        <li>
-          <div class="collapsible-header">Pay Period 2</div>
-          <div class="collapsible-body">
-            <h6>
-              **Surplus/Deficit Details Here**
-            </h6>
-            <table>
-                <thead>
-                  <th>Item</th>
-                  <th>Category</th>
-                  <th>Price</th>
-                </thead>
-                <tbody>
-                  <tr class="cell">
-                    <td class="text-darken-1 grey-text">Coffee</td>
-                    <td class="text-darken-1 grey-text">Frivolous</td>
-                    <td class="text-darken-1 grey-text">5.50</td>
-                  </tr>
-                  <tr class="cell">
-                    <td class="text-darken-1 grey-text">Groceries</td>
-                    <td class="text-darken-1 grey-text">Groceries</td>
-                    <td class="text-darken-1 grey-text">120</td>
-                  </tr>
-                </tbody>
-              </table>
+      <!-- <h1 class="header teal-text text-lighten-3">Dashboard</h1>
+      <br> -->
+        <h4 class="light grey-text">2020</h4>
+        <ul class="collapsible nested-collapsible-shadow">
+          <li>
+            <div class="collapsible-header">
+              <h5 class="light grey-text"><i class="material-icons chevron">keyboard_arrow_right</i>February</h5>
+            </div>
+            <div class="collapsible-body">
+              <ul class="collapsible nested-collapsible-shadow">
+                <li>
+                  <div class="light grey-text collapsible-header nested-collapsible">
+                    <span><i class="material-icons chevron">keyboard_arrow_right</i>Pay Period 2</span>
+                    <div class="right green-text text-lighten-2">$122</div>
+                  </div>
+                  <div class="collapsible-body">
+                    <table>
+                        <thead>
+                          <th>Item</th>
+                          <th>Category</th>
+                          <th>Price</th>
+                        </thead>
+                        <tbody>
+                          <tr class="cell">
+                            <td class="text-darken-1 grey-text">Coffee</td>
+                            <td class="text-darken-1 grey-text">Frivolous</td>
+                            <td class="text-darken-1 grey-text">5.50</td>
+                          </tr>
+                          <tr class="cell">
+                            <td class="text-darken-1 grey-text">Groceries</td>
+                            <td class="text-darken-1 grey-text">Groceries</td>
+                            <td class="text-darken-1 grey-text">120</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="light grey-text collapsible-header nested-collapsible">
+                      <span><i class="material-icons chevron">keyboard_arrow_right</i>Pay Period 1</span>
+                      <div class="right red-text text-lighten-2">$312</div>
+                    </div>
+                    <div class="collapsible-body">
+                      <table>
+                          <thead>
+                            <th>Item</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                          </thead>
+                          <tbody>
+                            <tr class="cell">
+                              <td class="text-darken-1 grey-text">Coffee</td>
+                              <td class="text-darken-1 grey-text">Frivolous</td>
+                              <td class="text-darken-1 grey-text">5.50</td>
+                            </tr>
+                            <tr class="cell">
+                              <td class="text-darken-1 grey-text">Groceries</td>
+                              <td class="text-darken-1 grey-text">Groceries</td>
+                              <td class="text-darken-1 grey-text">120</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                  </li>
+                </ul>
             </div>
           </li>
           <li>
-            <div class="collapsible-header">Pay Period 1</div>
+            <div class="collapsible-header">
+              <h5 class="light grey-text"><i class="material-icons chevron">keyboard_arrow_right</i>January</h5>
+            </div>
             <div class="collapsible-body">
-              <table>
-                  <thead>
-                    <th>Item</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                  </thead>
-                  <tbody>
-                    <tr class="cell">
-                      <td class="text-darken-1 grey-text">Coffee</td>
-                      <td class="text-darken-1 grey-text">Frivolous</td>
-                      <td class="text-darken-1 grey-text">5.50</td>
-                    </tr>
-                    <tr class="cell">
-                      <td class="text-darken-1 grey-text">Groceries</td>
-                      <td class="text-darken-1 grey-text">Groceries</td>
-                      <td class="text-darken-1 grey-text">120</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <ul class="collapsible nested-collapsible-shadow">
+              <li>
+                <div class="light grey-text collapsible-header nested-collapsible">
+                  <span><i class="material-icons chevron">keyboard_arrow_right</i>Pay Period 3</span>
+                  <div class="right red-text text-lighten-2">$100</div>
+                </div>
+                <div class="collapsible-body">
+                  <table>
+                      <thead>
+                        <th>Item</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                      </thead>
+                      <tbody>
+                        <tr class="cell">
+                          <td class="text-darken-1 grey-text">Coffee</td>
+                          <td class="text-darken-1 grey-text">Frivolous</td>
+                          <td class="text-darken-1 grey-text">5.50</td>
+                        </tr>
+                        <tr class="cell">
+                          <td class="text-darken-1 grey-text">Groceries</td>
+                          <td class="text-darken-1 grey-text">Groceries</td>
+                          <td class="text-darken-1 grey-text">120</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </li>
+              <li>
+                <div class="light grey-text collapsible-header nested-collapsible">
+                  <span><i class="material-icons chevron">keyboard_arrow_right</i>Pay Period 2</span>
+                  <div class="right red-text text-lighten-2">$100</div>
+                </div>
+                <div class="collapsible-body">
+                  <table>
+                      <thead>
+                        <th>Item</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                      </thead>
+                      <tbody>
+                        <tr class="cell">
+                          <td class="text-darken-1 grey-text">Coffee</td>
+                          <td class="text-darken-1 grey-text">Frivolous</td>
+                          <td class="text-darken-1 grey-text">5.50</td>
+                        </tr>
+                        <tr class="cell">
+                          <td class="text-darken-1 grey-text">Groceries</td>
+                          <td class="text-darken-1 grey-text">Groceries</td>
+                          <td class="text-darken-1 grey-text">120</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </li>
+              <li>
+                <div class="light grey-text collapsible-header nested-collapsible">
+                  <span><i class="material-icons chevron">keyboard_arrow_right</i>Pay Period 1</span>
+                  <div class="right green-text text-lighten-2">$300</div>
+                </div>
+                <div class="collapsible-body">
+                  <table>
+                    <thead>
+                      <th>Item</th>
+                      <th>Category</th>
+                      <th>Price</th>
+                    </thead>
+                    <tbody>
+                      <tr class="cell">
+                        <td class="text-darken-1 grey-text">Coffee</td>
+                        <td class="text-darken-1 grey-text">Frivolous</td>
+                        <td class="text-darken-1 grey-text">5.50</td>
+                      </tr>
+                      <tr class="cell">
+                        <td class="text-darken-1 grey-text">Groceries</td>
+                        <td class="text-darken-1 grey-text">Groceries</td>
+                        <td class="text-darken-1 grey-text">120</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </li>
+            </ul>
             </div>
           </li>
         </ul>
-        <br>
           
-        <h6 class="light grey-text">January</h6>
-        <ul class="collapsible">
-        <li>
-          <div class="collapsible-header">Pay Period 3</div>
-          <div class="collapsible-body">
-            <table>
-                <thead>
-                  <th>Item</th>
-                  <th>Category</th>
-                  <th>Price</th>
-                </thead>
-                <tbody>
-                  <tr class="cell">
-                    <td class="text-darken-1 grey-text">Coffee</td>
-                    <td class="text-darken-1 grey-text">Frivolous</td>
-                    <td class="text-darken-1 grey-text">5.50</td>
-                  </tr>
-                  <tr class="cell">
-                    <td class="text-darken-1 grey-text">Groceries</td>
-                    <td class="text-darken-1 grey-text">Groceries</td>
-                    <td class="text-darken-1 grey-text">120</td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-        </li>
-        <li>
-          <div class="collapsible-header">Pay Period 2</div>
-          <div class="collapsible-body">
-            <table>
-                <thead>
-                  <th>Item</th>
-                  <th>Category</th>
-                  <th>Price</th>
-                </thead>
-                <tbody>
-                  <tr class="cell">
-                    <td class="text-darken-1 grey-text">Coffee</td>
-                    <td class="text-darken-1 grey-text">Frivolous</td>
-                    <td class="text-darken-1 grey-text">5.50</td>
-                  </tr>
-                  <tr class="cell">
-                    <td class="text-darken-1 grey-text">Groceries</td>
-                    <td class="text-darken-1 grey-text">Groceries</td>
-                    <td class="text-darken-1 grey-text">120</td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-        </li>
-        <li>
-          <div class="collapsible-header">Pay Period 1</div>
-          <div class="collapsible-body">
-            <table>
-              <thead>
-                <th>Item</th>
-                <th>Category</th>
-                <th>Price</th>
-              </thead>
-              <tbody>
-                <tr class="cell">
-                  <td class="text-darken-1 grey-text">Coffee</td>
-                  <td class="text-darken-1 grey-text">Frivolous</td>
-                  <td class="text-darken-1 grey-text">5.50</td>
-                </tr>
-                <tr class="cell">
-                  <td class="text-darken-1 grey-text">Groceries</td>
-                  <td class="text-darken-1 grey-text">Groceries</td>
-                  <td class="text-darken-1 grey-text">120</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </li>
-      </ul>
-      <br>
-      <h4 class="light grey-text">2019</h4>
-      <h6 class="light grey-text">December</h6>
-      <ul class="collapsible">
-        <li>
-          <div class="collapsible-header">Pay Period 2</div>
-          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-          <div class="collapsible-header">Pay Period 1</div>
-          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <!-- <br> -->
+        <br>
+        <h4 class="light grey-text">2019</h4>
+        <ul class="collapsible nested-collapsible-shadow">
+          <li>
+            <div class="collapsible-header">
+              <h5 class="light grey-text"><i class="material-icons chevron">keyboard_arrow_right</i>December</h5>
+            </div>
+            <div class="collapsible-body">
+              <ul class="collapsible nested-collapsible-shadow">
+                <li>
+                  <div class="light grey-text collapsible-header nested-collapsible">
+                    <span>Pay Period 2</span>
+                    <div class="right green-text text-lighten-2">$122</div>
+                  </div>
+                  <div class="collapsible-body">
+                    <table>
+                        <thead>
+                          <th>Item</th>
+                          <th>Category</th>
+                          <th>Price</th>
+                        </thead>
+                        <tbody>
+                          <tr class="cell">
+                            <td class="text-darken-1 grey-text">Coffee</td>
+                            <td class="text-darken-1 grey-text">Frivolous</td>
+                            <td class="text-darken-1 grey-text">5.50</td>
+                          </tr>
+                          <tr class="cell">
+                            <td class="text-darken-1 grey-text">Groceries</td>
+                            <td class="text-darken-1 grey-text">Groceries</td>
+                            <td class="text-darken-1 grey-text">120</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="light grey-text collapsible-header nested-collapsible">
+                      <span>Pay Period 1</span>
+                      <div class="right red-text text-lighten-2">$312</div>
+                    </div>
+                    <div class="collapsible-body">
+                      <table>
+                          <thead>
+                            <th>Item</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                          </thead>
+                          <tbody>
+                            <tr class="cell">
+                              <td class="text-darken-1 grey-text">Coffee</td>
+                              <td class="text-darken-1 grey-text">Frivolous</td>
+                              <td class="text-darken-1 grey-text">5.50</td>
+                            </tr>
+                            <tr class="cell">
+                              <td class="text-darken-1 grey-text">Groceries</td>
+                              <td class="text-darken-1 grey-text">Groceries</td>
+                              <td class="text-darken-1 grey-text">120</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                  </li>
+                </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
 
   <!-- New Entry -->
   <div class="container">
     <br>
-    <hr>
+    <!-- <hr> -->
     <br>
-    <h4 class="light grey-text">New Entry</h4>
+    <h3 id="newEntry" class="light teal-text text-lighten-3">New Entry</h3>
     
     <form>
       <div class="row">
@@ -298,10 +385,29 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.collapsible');
+        var options = {
+          onCloseStart: function(collapsible, trigger) {
+            arrowUp(collapsible.firstElementChild.firstElementChild.firstElementChild);
+          },
+          onOpenStart: function (collapsible, trigger) {
+            arrowDown(collapsible.firstElementChild.firstElementChild.firstElementChild);
+          }
+        }
+        var instances = M.Collapsible.init(elems, options);
+      });
      $(document).ready(function(){
       $('select').formSelect();
       $('.datepicker').datepicker();
-      $('.collapsible').collapsible();
+      // $('.collapsible').collapsible();
+      $('.sidenav').sidenav();
+      $('.fixed-action-btn').floatingActionButton();
+
+      // var elems = document.querySelectorAll('.collapsible');
+      // var instances = M.Sidenav.init(elems, {
+      //   onCloseStart: function() {console.log("onCloseStart");}
+      // });
      });
 
      function addRow(e) {
@@ -417,6 +523,13 @@
        }
       });
       return total;
+     }
+
+     function arrowDown(e) {
+       e.innerHTML = "keyboard_arrow_down"
+     }
+     function arrowUp(e) {
+       e.innerHTML = "keyboard_arrow_right"
      }
 
     document.querySelector('form').addEventListener('submit', function(e) {

@@ -7628,7 +7628,7 @@ input[type=range]::-ms-thumb {
 
 .sidenav .user-view {
   position: relative;
-  padding: 32px 32px 0;
+  padding: 10px 32px 10px;
   margin-bottom: 8px;
 }
 
